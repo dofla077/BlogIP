@@ -1,0 +1,44 @@
+#parameters:
+#    checker.class: Blog\BadgeBundle\Services\Checker
+#
+#services:
+#    blog_badge.checker:
+#        class: "%checker.class%"
+#        calls:
+##            - [setLogger,['@logger']]
+#            - method: setLogger
+#              arguments:
+#                 - '@logger'
+#
+#        tags:
+#          - name: doffy
+#
+#    blog_badge.listener.controller:
+#        class: Blog\BadgeBundle\EventDispatcher\Listener\ControllerListener
+#        calls:
+#          - method: setTwig
+#            arguments:
+#              - '@twig'
+#        tags:
+#          - name: kernel.event_listener
+#            event: kernel.controller
+#            method: onKernelController
+#
+#    blog_badge.listener.view:
+#        class: Blog\BadgeBundle\EventDispatcher\Listener\ViewListener
+#        calls:
+#            - method: setLogger
+#              arguments:
+#                - '@logger'
+#
+#        tags:
+#          - name: kernel.event_listener
+#            event: view.access
+#            method: onKernelView
+#
+#    blog_badge.twig_extension:
+#        class: Blog\BadgeBundle\Twig\Extension\DataExtension
+#        tags:
+#            - name: twig.extension
+#              event: kernel.controller
+#              method: onKernelCurrentController

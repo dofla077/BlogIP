@@ -1,3 +1,17 @@
 app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+    resource: "@AppBundle/Resources/config/routing.yml"
+
+blog_user:
+    resource: "@BlogUserBundle/Resources/config/routing.yml"
+    prefix:   /user
+
+blog_badge:
+    resource: "@BlogBadgeBundle/Resources/config/routing.yml"
+    prefix:   /badge
+
+#app:
+#    resource: "@AppBundle/Controller/"
+#    type:     annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

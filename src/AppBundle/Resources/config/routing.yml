@@ -1,0 +1,19 @@
+app_homepage:
+    path: /
+    defaults:
+        _controller: AppBundle:Home:index
+
+app_cgu:
+    path: /cgu
+    defaults:
+        _controller: AppBundle:Home:cgu
+
+app_faq:
+    path: /faq
+    defaults:
+        _controller: AppBundle:Home:faq
+
+app_contact:
+    path: /contact
+    defaults:
+        _controller: AppBundle:Contact:form

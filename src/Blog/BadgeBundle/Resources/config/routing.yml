@@ -1,0 +1,7 @@
+blog_badge_homepage:
+    path:     /badge
+    defaults: { _controller: BlogBadgeBundle:Default:index }
+
+blog_badge_foo:
+    path:    /foo
+    defaults: { _controller: BlogBadgeBundle:Default:foo}

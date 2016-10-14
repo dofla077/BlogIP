@@ -1,0 +1,111 @@
+<!-- Navbar -->
+{#<nav class="navbar navbar-transparent navbar-info navbar-fixed-top navbar-color-on-scroll">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{{ path('app_homepage') }}">
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="{{ asset('assets/img/dofla-logo.png') }}" alt="Creative Tim Logo" rel="tooltip" title="Bienvenue à <b>Dressrossa</b>." data-placement="bottom" data-html="true">
+                    </div>
+                    <div class="brand">
+                        Donquixotte Doflamingo
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navigation-index">
+            <ul class="nav navbar-nav navbar-right">
+                <li {% if app.request.get('_route') == "app_cgu" %} class="active" {% endif %}>
+                    <a data-placement="bottom" rel="tooltip" title="Condition générale d'utilisation" href="{{ path('app_cgu') }}">
+                        CGU
+                    </a>
+                </li>
+                <li {% if app.request.get('_route') == "app_faq" %} class="active" {% endif %}>
+                    <a data-placement="bottom" rel="tooltip" title="Foire aux questions" href="{{ path('app_faq') }}">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i> FAQ
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="modal" data-target="#myModal" rel="tooltip" title="Contactez-moi" data-placement="bottom" href="#" class="btn btn-white btn-simple btn-just-icon">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a rel="tooltip" title="Suivez moi sur Twitter" data-placement="bottom" href="#" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a rel="tooltip" title="Suivez moi sur Facebook" data-placement="bottom" href="#" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a rel="tooltip" title="Suivez moi sur Google+" data-placement="bottom" href="#" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>#}
+<!-- End Navbar -->
+
+
+<nav class="navbar navbar-transparent navbar-absolute">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ path('app_homepage') }}">Blog</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navigation-example">
+            <ul class="nav navbar-nav navbar-right">
+                <li {% if app.request.get('_route') == "app_cgu" %} class="active" {% endif %}>
+                    <a data-placement="bottom" rel="tooltip" title="Condition générale d'utilisation" href="{{ path('app_cgu') }}">
+                        CGU
+                    </a>
+                </li>
+                <li {% if app.request.get('_route') == "app_faq" %} class="active" {% endif %}>
+                    <a data-placement="bottom" rel="tooltip" title="Foire aux questions" href="{{ path('app_faq') }}">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i> FAQ
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="modal" data-target="#myModal" rel="tooltip" title="Contactez-moi" data-placement="bottom" href="#" class="btn btn-white btn-simple btn-just-icon">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a rel="tooltip" title="Suivez moi sur Twitter" data-placement="bottom" href="#" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a rel="tooltip" title="Suivez moi sur Facebook" data-placement="bottom" href="#" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a rel="tooltip" title="Suivez moi sur Google+" data-placement="bottom" href="#" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
