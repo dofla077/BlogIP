@@ -31,6 +31,7 @@ class LoadUserData extends AbstractFixture
             $user
                 ->setUsername($faker->userName)
                 ->setEmail($faker->email)
+                ->setPassword('dofla')
                 ->setEnabled(true)
             ;
             $manager->persist($user);

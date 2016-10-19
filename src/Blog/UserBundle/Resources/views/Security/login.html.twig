@@ -1,0 +1,86 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %} - Login {% endblock %}
+{% block body_class %} signup-page {% endblock %}
+
+{% block body_login %}
+
+    {# On affiche les messages flash que définissent les contrôleurs du bundle #}
+    {% for key, message in app.session.flashbag.all() %}
+        <div class="alert alert-{{ key }}">
+            {{ message|trans({}, 'FOSUserBundle') }}
+        </div>
+    {% endfor %}
+
+    {% block fos_user_content %}
+
+    <div class="header header-filter">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="card card-signup">
+                <form action="{{ path("fos_user_security_check") }}" method="post">
+                    {% if csrf_token %}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    {% endif %}
+                    <div class="header header-primary text-center">
+                        <h4>Sign Up</h4>
+                        <div class="social-line">
+                            <a href="#pablo" class="btn btn-simple btn-just-icon">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                            <a href="#pablo" class="btn btn-simple btn-just-icon">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#pablo" class="btn btn-simple btn-just-icon">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    {% if error %}
+                        <div class="text-divider">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                    <p class="text-divider">Or Be Classical</p>
+                    <div class="content">
+
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">face</i>
+                            </span>
+                            {#<input type="text" class="form-control" placeholder="First Name...">#}
+                            <input type="text" class="form-control" id="username" name="_username" value="{{ last_username  }}" placeholder="Login..." required="required" />
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">lock_outline</i>
+                            </span>
+                            {#<input type="password" placeholder="Password..." class="form-control" />#}
+                            <input type="password" id="password" name="_password" required="required" class="form-control" placeholder="Password..." />
+                        </div>
+
+                        <!-- If you want to add a checkbox to this form, uncomment this code -->
+
+                        <div class="checkbox">
+                            <label>
+                                {#<input type="checkbox" name="optionsCheckboxes" checked>#}
+                                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                                Se souvenir de moi
+                            </label>
+                        </div>
+                    </div>
+                    <div class="footer text-center">
+                        {#<a href="#pablo" class="btn btn-simple btn-primary btn-lg">Get Started</a>#}
+                        <input class="btn btn-simple btn-primary btn-lg" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    {% endblock fos_user_content %}
+
+{% endblock %}
+

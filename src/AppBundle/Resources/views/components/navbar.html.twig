@@ -75,6 +75,15 @@
 
         <div class="collapse navbar-collapse" id="navigation-example">
             <ul class="nav navbar-nav navbar-right">
+                <li {% if app.request.get('_route') == "blog_user_login" %} class="active" {% endif %}>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        Connecté en tant que {{ app.user.username }}
+                        -
+                        <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+                    {% else %}
+                        <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+                    {% endif %}
+                </li>
                 <li {% if app.request.get('_route') == "app_cgu" %} class="active" {% endif %}>
                     <a data-placement="bottom" rel="tooltip" title="Condition générale d'utilisation" href="{{ path('app_cgu') }}">
                         CGU

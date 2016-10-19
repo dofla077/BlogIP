@@ -26,37 +26,40 @@
     <title>:: Blog {% block title %}{% endblock %} ::</title>
 
 </head>
-<body class="index-page">
+<body class="{% block body_class %} index-page {% endblock %}">
 {% include 'AppBundle:components:navbar.html.twig' %}
 
 <div class="wrapper">
 
-    <div class="header {#header-filter#}" id="bkg-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="brand">
-                        {% block brand %}
-                            <h1>Material Kit.</h1>
-                            <h3>A Badass Bootstrap UI Kit based on Material Design.</h3>
+    {% if app.request.get('_route') == "fos_user_security_login" %}
+        {% block body_login %}
+        {% endblock %}
+    {% else %}
+        <div class="header {#header-filter#}" id="bkg-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="brand">
+                            {% block brand %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="main main-raised">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        {% block body %}
                         {% endblock %}
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
-
-    <div class="main main-raised">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    {% block body %}
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endif %}
 
     {% include '@App/components/footer.html.twig' %}
 </div>
