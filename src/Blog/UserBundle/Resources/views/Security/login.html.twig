@@ -49,7 +49,9 @@
                                 <i class="material-icons">face</i>
                             </span>
                             {#<input type="text" class="form-control" placeholder="First Name...">#}
-                            <input type="text" class="form-control" id="username" name="_username" value="{{ last_username  }}" placeholder="Login..." required="required" />
+                            {#<input type="text" class="form-control" id="username" name="_username" value="{{ last_username  }}" placeholder="Login..." required="required" />#}
+                            {#<label for="username">{{ 'security.login.username'|trans }}</label>#}
+                            <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" placeholder="Login..." required="required" />
                         </div>
 
                         <div class="input-group">

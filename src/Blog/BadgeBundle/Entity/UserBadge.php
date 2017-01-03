@@ -2,6 +2,8 @@
 
 namespace Blog\BadgeBundle\Entity;
 
+use Blog\BadgeBundle\Entity\Badge;
+use Blog\UserBundle\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -78,10 +80,10 @@ class UserBadge
     /**
      * Set user
      *
-     * @param \Blog\BadgeBundle\Entity\User $user
+     * @param User|User $user
      * @return UserBadge
      */
-    public function setUser(\Blog\BadgeBundle\Entity\User $user)
+    public function setUser(User $user)
     {
         $this->user = $user;
 
@@ -91,7 +93,7 @@ class UserBadge
     /**
      * Get user
      *
-     * @return \Blog\BadgeBundle\Entity\User 
+     * @return \Blog\BadgeBundle\Entity\User
      */
     public function getUser()
     {
@@ -101,10 +103,10 @@ class UserBadge
     /**
      * Set badge
      *
-     * @param \Blog\BadgeBundle\Entity\Badge $badge
+     * @param Badge $badge
      * @return UserBadge
      */
-    public function setBadge(\Blog\BadgeBundle\Entity\Badge $badge)
+    public function setBadge(Badge $badge)
     {
         $this->badge = $badge;
 
@@ -114,7 +116,7 @@ class UserBadge
     /**
      * Get badge
      *
-     * @return \Blog\BadgeBundle\Entity\Badge 
+     * @return Badge
      */
     public function getBadge()
     {

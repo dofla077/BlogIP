@@ -2,6 +2,8 @@
 
 namespace Blog\BadgeBundle\Entity;
 
+use Blog\BadgeBundle\Entity\UserBadge;
+use Blog\UserBundle\Entity\User;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -137,10 +139,10 @@ class Badge
     /**
      * Add users
      *
-     * @param \Blog\BadgeBundle\Entity\User $users
+     * @param User|User $users
      * @return Badge
      */
-    public function addUser(\Blog\BadgeBundle\Entity\User $users)
+    public function addUser(User $users)
     {
         $this->users[] = $users;
 
@@ -150,9 +152,9 @@ class Badge
     /**
      * Remove users
      *
-     * @param \Blog\BadgeBundle\Entity\User $users
+     * @param User|User $users
      */
-    public function removeUser(\Blog\BadgeBundle\Entity\User $users)
+    public function removeUser(User $users)
     {
         $this->users->removeElement($users);
     }
@@ -170,10 +172,10 @@ class Badge
     /**
      * Add userBadges
      *
-     * @param \Blog\BadgeBundle\Entity\UserBadge $userBadges
+     * @param UserBadge $userBadges
      * @return Badge
      */
-    public function addUserBadge(\Blog\BadgeBundle\Entity\UserBadge $userBadges)
+    public function addUserBadge(UserBadge $userBadges)
     {
         $this->userBadges[] = $userBadges;
 
@@ -183,9 +185,9 @@ class Badge
     /**
      * Remove userBadges
      *
-     * @param \Blog\BadgeBundle\Entity\UserBadge $userBadges
+     * @param UserBadge $userBadges
      */
-    public function removeUserBadge(\Blog\BadgeBundle\Entity\UserBadge $userBadges)
+    public function removeUserBadge(UserBadge $userBadges)
     {
         $this->userBadges->removeElement($userBadges);
     }
